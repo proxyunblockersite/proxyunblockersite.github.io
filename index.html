@@ -52,3 +52,66 @@ body {
   }
 }
   </style>
+  <h1>
+    Click any of the buttons below to go to that proxy.
+  </h1>
+
+
+  <div class="container">
+    <div class="box">
+      <iframe width="560" height="315" src="https://schoology.pickens.k12.sc.us.wiki.gd/load.html" frameborder="0"
+        allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://otexistsmdzgumath.edu.ooguy.com/" frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+    <div class="preview"></div> 
+  </div>
+<style>
+  .container {
+    display: flex;
+    }
+    
+    .box {
+    width: 50%;
+    padding: 20px;
+    }
+    
+    .box:hover {
+    cursor: pointer;
+    }
+    
+    .preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: lightgray;
+    }
+    
+    .box img,
+    .box iframe,
+    .preview img,
+    .preview iframe {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    }
+</style>
+<script>
+        var box = document.querySelector('.box');
+    var preview = document.querySelector('.preview');
+    
+    box.addEventListener('mouseover', function(event) {
+    var target = event.target;
+    
+    if (target.tagName === 'IMG' || target.tagName === 'IFRAME') {
+    var clone = target.cloneNode(true);
+    preview.innerHTML = '';
+    preview.appendChild(clone);
+    }
+    });
+    
+    box.addEventListener('mouseleave', function() {
+    preview.innerHTML = '';
+    });
+</script>
